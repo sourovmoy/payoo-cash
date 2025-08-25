@@ -26,7 +26,7 @@
       <div class="flex items-center">
         <img src="assets/Group.png" alt="" />
         <div>
-          <h3 class="font-extrabold">$45000</h3>
+          <h3 class="font-extrabold">$<span id="account-money">45000</span></h3>
           <p>Available Balance</p>
         </div>
       </div>
@@ -37,6 +37,7 @@
         </button>
       </div>
     </nav>
+
     <!-- cards section -->
     <section class="mt-10">
       <h3 class="font-bold text-2xl">🔥 Welcome to Payooo!</h3>
@@ -84,6 +85,218 @@
         </div>
       </div>
     </section>
-    <script src="home.js"></script>
+
+    <!-- toggole section -->
+    <section>
+      <!-- add money section -->
+      <div class="mt-10 bg-[#f4f5f7]">
+        <div class="my-4">
+          <h3 class="mx-6 py-8 text-xl font-bold">Add Money</h3>
+          <form class="p-6 rounded-lg mx-5 bg-white">
+            <div class="pb-3">
+              <h4 class="font-semibold">Select A Bank</h4>
+              <select class="select bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2">
+                <option disabled selected>Select Bank</option>
+                <option>Sonali Bank</option>
+                <option>NRBC Bank</option>
+                <option>Islami Bank</option>
+              </select>
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Bank Account Number</h4>
+              <input
+                id="enter-account"
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter 11 digit account number"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Amount to Add</h4>
+              <input
+                id="enter-amount"
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Add Amount to withdraw"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Pin Number</h4>
+              <input
+                id="enter-pin"
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter 4 digit pin number"
+              />
+            </div>
+            <button
+              id="add-money-btn"
+              class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
+            >
+              Add Money
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- cashout section -->
+      <div class="mt-10 bg-[#f4f5f7]">
+        <div class="my-4">
+          <h3 class="mx-6 py-8 text-xl font-bold">Cash Out</h3>
+          <form class="p-6 rounded-lg mx-5 bg-white">
+            <div class="pb-3">
+              <h4 class="font-semibold">Agent Number</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="text"
+                placeholder="     Enter 11 digit number"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Amount</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter amount to withdraw "
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Pin Number</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter 4 digit pin number"
+              />
+            </div>
+
+            <button
+              id="lonin-btn"
+              class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
+            >
+              Withdraw Money
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- tranfer money section -->
+      <div class="mt-10 bg-[#f4f5f7]">
+        <div class="my-4">
+          <h3 class="mx-6 py-8 text-xl font-bold">Transfer Money</h3>
+          <form class="p-6 rounded-lg mx-5 bg-white">
+            <div class="pb-3">
+              <h4 class="font-semibold">User Account Number</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter 11 digit number"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Amount</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter amount to transfer"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Pin Number</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter 4 digit pin number"
+              />
+            </div>
+            <button
+              id="lonin-btn"
+              class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
+            >
+              send Now
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- get bonus section -->
+      <div class="mt-10 bg-[#f4f5f7]">
+        <div class="my-4">
+          <h3 class="mx-6 py- text-xl font-bold">Get Bonus</h3>
+          <form class="p-6 rounded-lg mx-3 bg-white">
+            <div class="pb-3">
+              <h4 class="font-semibold">Select A Bank</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="text"
+                placeholder="     Select bank"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Enter Bonus Coupon</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter your coupon"
+              />
+            </div>
+
+            <button
+              id="lonin-btn"
+              class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
+            >
+              Get Bonus
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- paybill section -->
+      <div class="mt-10 bg-[#f4f5f7]">
+        <div class="my-4">
+          <h3 class="mx-6 py- text-xl font-bold">Pay Bill</h3>
+          <form class="p-6 rounded-lg mx-3 bg-white">
+            <div class="pb-3">
+              <h4 class="font-semibold">Select To Pay</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="text"
+                placeholder="     Select bank"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Biller Account Number</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter account number"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Amount to Pay</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Add Amount to pay"
+              />
+            </div>
+            <div class="pb-3">
+              <h4 class="font-semibold">Pin Number</h4>
+              <input
+                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+                type="number"
+                placeholder="     Enter 4 digit pin number"
+              />
+            </div>
+            <button
+              id="lonin-btn"
+              class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
+            >
+              Pay Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="add-money.js"></script>
   </body>
 </html>
