@@ -26,7 +26,7 @@
       <div class="flex items-center">
         <img src="assets/Group.png" alt="" />
         <div>
-          <h3 id="account-money" class="font-extrabold">$45000</h3>
+          <h3 class="font-extrabold">$<span id="account-money">45000</span></h3>
           <p>Available Balance</p>
         </div>
       </div>
@@ -101,6 +101,7 @@
           <div class="pb-3">
             <h4 class="font-semibold">Bank Account Number</h4>
             <input
+              id="enter-account"
               class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
               type="number"
               placeholder="     Enter 11 digit account number"
@@ -109,7 +110,7 @@
           <div class="pb-3">
             <h4 class="font-semibold">Amount to Add</h4>
             <input
-              id="inter-ammount"
+              id="enter-amount"
               class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
               type="number"
               placeholder="     Add Amount to withdraw"
@@ -118,13 +119,14 @@
           <div class="pb-3">
             <h4 class="font-semibold">Pin Number</h4>
             <input
+              id="enter-pin"
               class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
               type="number"
               placeholder="     Enter 4 digit pin number"
             />
           </div>
           <button
-            id="lonin-btn"
+            id="add-money-btn"
             class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
           >
             Add Money
