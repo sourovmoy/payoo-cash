@@ -1,3 +1,74 @@
+//             ToggleEvent features
+
+// for add money section
+
+document.getElementById("add-money-div").addEventListener("click", function () {
+  document.getElementById("cash-out").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("get-bonus").style.display = "none";
+  document.getElementById("pay-bill").style.display = "none";
+  document.getElementById("transaction").style.display = "none";
+
+  document.getElementById("add-money").style.display = "block";
+});
+// for cash out section
+document.getElementById("cash-out-div").addEventListener("click", function () {
+  document.getElementById("add-money").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("get-bonus").style.display = "none";
+  document.getElementById("pay-bill").style.display = "none";
+  document.getElementById("transaction").style.display = "none";
+
+  document.getElementById("cash-out").style.display = "block";
+});
+// for transfer money section
+document
+  .getElementById("transfer-money-div")
+  .addEventListener("click", function () {
+    document.getElementById("cash-out").style.display = "none";
+    document.getElementById("add-money").style.display = "none";
+    document.getElementById("get-bonus").style.display = "none";
+    document.getElementById("pay-bill").style.display = "none";
+    document.getElementById("transaction").style.display = "none";
+
+    document.getElementById("transfer-money").style.display = "block";
+  });
+// for get bonus section
+document.getElementById("get-bonus-div").addEventListener("click", function () {
+  document.getElementById("cash-out").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("add-money").style.display = "none";
+  document.getElementById("pay-bill").style.display = "none";
+  document.getElementById("transaction").style.display = "none";
+
+  document.getElementById("get-bonus").style.display = "block";
+});
+// for pay bill section
+document.getElementById("pay-bill-div").addEventListener("click", function () {
+  document.getElementById("cash-out").style.display = "none";
+  document.getElementById("transfer-money").style.display = "none";
+  document.getElementById("get-bonus").style.display = "none";
+  document.getElementById("add-money").style.display = "none";
+  document.getElementById("transaction").style.display = "none";
+
+  document.getElementById("pay-bill").style.display = "block";
+});
+// for transaction section
+document
+  .getElementById("transaction-div")
+  .addEventListener("click", function () {
+    document.getElementById("cash-out").style.display = "none";
+    document.getElementById("transfer-money").style.display = "none";
+    document.getElementById("get-bonus").style.display = "none";
+    document.getElementById("pay-bill").style.display = "none";
+    document.getElementById("add-money").style.display = "none";
+
+    document.getElementById("transaction").style.display = "block";
+  });
+
+//        event featuse
+
+// add money event features
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (event) {
