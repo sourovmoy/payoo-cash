@@ -9,7 +9,7 @@ document
 
     if (inputMobNum === mobNum && inputPinNum === fixPin) {
       console.log("ok");
-      window.location.href = "./home.html";
+      window.location.href = "home.html";
     } else {
       alert("Invalid Mobile Number or Pin Number");
     }

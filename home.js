@@ -1,4 +1,44 @@
-//             ToggleEvent features
+/*
+ *            shared function
+ */
+// for input value
+
+function findInputValue(id) {
+  const findId = document.getElementById(id);
+  const findValue = findId.value;
+  const findValueNum = parseInt(findValue);
+  return findValueNum;
+}
+// for inner text
+function findInputText(id) {
+  const findId = document.getElementById(id);
+  const findText = findId.innerText;
+  const findValueText = parseInt(findText);
+  return findValueText;
+}
+// pin varifying function
+function pinCheck(Pin) {
+  const fixedPin = 1234;
+  if (Pin !== fixedPin) {
+    alert("Please enter a valid 4 digit pin number");
+    return;
+  }
+}
+// for select bank option value
+function findBankValue(id) {
+  const findId = document.getElementById(id);
+  const findBank = findId.value;
+  return findBank;
+}
+
+// logout function
+document.getElementById("log-out-btn").addEventListener("click", function () {
+  window.location.href = "index.html";
+});
+
+/*
+ *           ToggleEvent features
+ */
 
 // for add money section
 
@@ -73,16 +113,13 @@ document
   .getElementById("add-money-btn")
   .addEventListener("click", function (event) {
     event.preventDefault();
-    const accountBalance = parseInt(
-      document.getElementById("account-money").innerText
-    );
-    const enterAmount = parseInt(document.getElementById("enter-amount").value);
-
-    const accountNumber = document.getElementById("enter-account").value;
+    const accountBalance = findInputText("account-money");
+    const enterAmount = findInputValue("enter-add-amount");
+    const accountNumber = findInputValue("enter-bank-account");
     const fixedPin = 1234;
-    const enterPin = parseInt(document.getElementById("enter-pin").value);
+    const enterPin = findInputValue("enter-add-amount-pin");
 
-    if (accountNumber.length !== 11) {
+    if (accountNumber.toString().length !== 11) {
       alert("Please enter a valid 11 digit account number");
       return;
     }
@@ -92,4 +129,77 @@ document
     }
     const totalAmount = accountBalance + enterAmount;
     document.getElementById("account-money").innerText = totalAmount;
+  });
+
+// cash out event features
+document
+  .getElementById("cash-out-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const accountBalance = findInputText("account-money");
+    const enterAmount = findInputValue("enter-cashOut-amount");
+    const accountNumber = findInputValue("enter-agent-account");
+
+    const enterPin = findInputValue("cash-out-pin");
+    pinCheck(enterPin);
+
+    if (accountNumber.toString().length !== 11) {
+      alert("Please enter a valid 11 digit account number");
+      return;
+    }
+    const totalAmount = accountBalance - enterAmount;
+    document.getElementById("account-money").innerText = totalAmount;
+  });
+// transfer money event features
+document
+  .getElementById("Transfer-money-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const accountBalance = findInputText("account-money");
+    const enterAmount = findInputValue("transfer-money-amount");
+    const accountNumber = findInputValue("transfer-money-account");
+    const enterPin = findInputValue("transfer-money-pin");
+    pinCheck(enterPin);
+
+    if (accountNumber.toString().length !== 11) {
+      alert("Please enter a valid 11 digit account number");
+      return;
+    }
+
+    const totalAmount = accountBalance - enterAmount;
+    document.getElementById("account-money").innerText = totalAmount;
+  });
+// get bonus event features
+document
+  .getElementById("get-bonus-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const accountBalance = findInputText("account-money");
+    const selectBank = "Sonali Bank";
+    const selectCoupon = 101010;
+    const bank = findBankValue("banks-option");
+    const coupon = findInputValue("enter-bonus-coupon");
+    const bonusAmount = 1000;
+
+    if (bank === selectBank && coupon === selectCoupon) {
+      const totalAmount = accountBalance + bonusAmount;
+      document.getElementById("account-money").innerText = totalAmount;
+    }
+  });
+// paybill event features
+document
+  .getElementById("pay-bill-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const accountBalance = findInputText("account-money");
+    const selectBank = "Islami Bank";
+    const bank = findBankValue("paybill-banks-option");
+    const billerAccount = findInputValue("biller-account-number");
+    const billerAmount = findInputValue("paybill-amount");
+    const enterPin = findInputValue("paybill-pin");
+    pinCheck(enterPin);
+    if (bank === selectBank && billerAccount.toString().length === 11) {
+      const totalAmount = accountBalance - billerAmount;
+      document.getElementById("account-money").innerText = totalAmount;
+    }
   });

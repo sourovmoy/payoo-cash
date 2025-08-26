@@ -31,7 +31,10 @@
         </div>
       </div>
       <div>
-        <button class="btn rounded-lg text-[#666768] px-3 py-2 border-1">
+        <button
+          id="log-out-btn"
+          class="btn rounded-lg text-[#666768] px-3 py-2 border-1"
+        >
           <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i> Log
           Out
         </button>
@@ -105,12 +108,12 @@
     </section>
 
     <!-- toggole section -->
-    <section>
+    <section class="toggle-section">
       <!-- add money section -->
-      <div id="add-money" class="mt-10 bg-[#f4f5f7]">
-        <div class="my-4">
-          <h3 class="mx-6 py-8 text-xl font-bold">Add Money</h3>
-          <form class="p-6 rounded-lg mx-5 bg-white">
+      <div id="add-money" class="my-10 bg-[#f4f5f7]">
+        <div class="">
+          <h3 class="mx-6 mb-5 py-8 text-xl font-bold">Add Money</h3>
+          <form class="p-6 rounded-lg mx-5 mb-4 bg-white">
             <div class="pb-3">
               <h4 class="font-semibold">Select A Bank</h4>
               <select class="select bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2">
@@ -123,7 +126,7 @@
             <div class="pb-3">
               <h4 class="font-semibold">Bank Account Number</h4>
               <input
-                id="enter-account"
+                id="enter-bank-account"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter 11 digit account number"
@@ -132,7 +135,7 @@
             <div class="pb-3">
               <h4 class="font-semibold">Amount to Add</h4>
               <input
-                id="enter-amount"
+                id="enter-add-amount"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Add Amount to withdraw"
@@ -141,7 +144,7 @@
             <div class="pb-3">
               <h4 class="font-semibold">Pin Number</h4>
               <input
-                id="enter-pin"
+                id="enter-add-amount-pin"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter 4 digit pin number"
@@ -161,10 +164,11 @@
       <div id="cash-out" class="mt-10 bg-[#f4f5f7]">
         <div class="my-4">
           <h3 class="mx-6 py-8 text-xl font-bold">Cash Out</h3>
-          <form class="p-6 rounded-lg mx-5 bg-white">
+          <form class="p-6 rounded-lg mx-5 bg-white mb-4">
             <div class="pb-3">
               <h4 class="font-semibold">Agent Number</h4>
               <input
+                id="enter-agent-account"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="text"
                 placeholder="     Enter 11 digit number"
@@ -173,6 +177,7 @@
             <div class="pb-3">
               <h4 class="font-semibold">Amount</h4>
               <input
+                id="enter-cashOut-amount"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter amount to withdraw "
@@ -181,6 +186,7 @@
             <div class="pb-3">
               <h4 class="font-semibold">Pin Number</h4>
               <input
+                id="cash-out-pin"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter 4 digit pin number"
@@ -188,7 +194,7 @@
             </div>
 
             <button
-              id="lonin-btn"
+              id="cash-out-btn"
               class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
             >
               Withdraw Money
@@ -201,10 +207,11 @@
       <div id="transfer-money" class="mt-10 bg-[#f4f5f7]">
         <div class="my-4">
           <h3 class="mx-6 py-8 text-xl font-bold">Transfer Money</h3>
-          <form class="p-6 rounded-lg mx-5 bg-white">
+          <form class="p-6 rounded-lg mx-5 bg-white mb-4">
             <div class="pb-3">
               <h4 class="font-semibold">User Account Number</h4>
               <input
+                id="transfer-money-account"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter 11 digit number"
@@ -213,6 +220,7 @@
             <div class="pb-3">
               <h4 class="font-semibold">Amount</h4>
               <input
+                id="transfer-money-amount"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter amount to transfer"
@@ -221,13 +229,14 @@
             <div class="pb-3">
               <h4 class="font-semibold">Pin Number</h4>
               <input
+                id="transfer-money-pin"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter 4 digit pin number"
               />
             </div>
             <button
-              id="lonin-btn"
+              id="Transfer-money-btn"
               class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
             >
               send Now
@@ -239,19 +248,24 @@
       <!-- get bonus section -->
       <div id="get-bonus" class="mt-10 bg-[#f4f5f7]">
         <div class="my-4">
-          <h3 class="mx-6 py- text-xl font-bold">Get Bonus</h3>
-          <form class="p-6 rounded-lg mx-3 bg-white">
+          <h3 class="mx-6 py-8 text-xl font-bold">Get Bonus</h3>
+          <form class="p-6 rounded-lg mx-3 bg-white mb-4">
             <div class="pb-3">
               <h4 class="font-semibold">Select A Bank</h4>
-              <input
-                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
-                type="text"
-                placeholder="     Select bank"
-              />
+              <select
+                id="banks-option"
+                class="select bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+              >
+                <option disabled selected>Select Bank</option>
+                <option>Sonali Bank</option>
+                <option>NRBC Bank</option>
+                <option>Islami Bank</option>
+              </select>
             </div>
             <div class="pb-3">
               <h4 class="font-semibold">Enter Bonus Coupon</h4>
               <input
+                id="enter-bonus-coupon"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter your coupon"
@@ -259,7 +273,7 @@
             </div>
 
             <button
-              id="lonin-btn"
+              id="get-bonus-btn"
               class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
             >
               Get Bonus
@@ -271,19 +285,24 @@
       <!-- paybill section -->
       <div id="pay-bill" class="pay-bill mt-10 bg-[#f4f5f7]">
         <div class="my-4">
-          <h3 class="mx-6 py- text-xl font-bold">Pay Bill</h3>
-          <form class="p-6 rounded-lg mx-3 bg-white">
+          <h3 class="mx-6 py-8 text-xl font-bold">Pay Bill</h3>
+          <form class="p-6 rounded-lg mx-5 bg-white">
             <div class="pb-3">
               <h4 class="font-semibold">Select To Pay</h4>
-              <input
-                class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
-                type="text"
-                placeholder="     Select bank"
-              />
+              <select
+                id="paybill-banks-option"
+                class="select bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
+              >
+                <option disabled selected>Select Bank</option>
+                <option>Sonali Bank</option>
+                <option>NRBC Bank</option>
+                <option>Islami Bank</option>
+              </select>
             </div>
             <div class="pb-3">
               <h4 class="font-semibold">Biller Account Number</h4>
               <input
+                id="biller-account-number"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter account number"
@@ -292,6 +311,7 @@
             <div class="pb-3">
               <h4 class="font-semibold">Amount to Pay</h4>
               <input
+                id="paybill-amount"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Add Amount to pay"
@@ -300,13 +320,14 @@
             <div class="pb-3">
               <h4 class="font-semibold">Pin Number</h4>
               <input
+                id="paybill-pin"
                 class="input bg-[#f4f5f7] rounded-3xl w-full p-3 mt-2"
                 type="number"
                 placeholder="     Enter 4 digit pin number"
               />
             </div>
             <button
-              id="lonin-btn"
+              id="pay-bill-btn"
               class="btn text-white bg-[#0874f2] my-3 w-full rounded-3xl py-3"
             >
               Pay Now
@@ -318,6 +339,8 @@
         <h1>coming</h1>
       </div>
     </section>
+
+    <!-- <script src="practice.js"></script> -->
     <script src="home.js"></script>
   </body>
 </html>
