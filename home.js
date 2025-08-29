@@ -1,3 +1,5 @@
+const storage = [];
+console.log(storage);
 /*
  *            shared function
  */
@@ -30,6 +32,32 @@ function findBankValue(id) {
   const findBank = findId.value;
   return findBank;
 }
+// transcript function
+function transaction(data) {
+  storage.push(data);
+  const historyPlace = document.getElementById("history-place");
+
+  for (const everyHistory of storage) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+          <div
+            class="flex justify-between items-center bg-white p-3 rounded-lg mb-5"
+          >
+            <div class="flex gap-3 items-center">
+              <div class="rounded-full bg-[#f4f5f7] p-3">
+                <img src="assets/wallet1.png" alt="" />
+              </div>
+              <div>
+                <h3>${everyHistory.name}</h3>
+                <p>${everyHistory.time}</p>
+              </div>
+            </div>
+            <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+          </div>
+        `;
+    historyPlace.appendChild(div);
+  }
+}
 
 // logout function
 document.getElementById("log-out-btn").addEventListener("click", function () {
@@ -41,7 +69,6 @@ function display(id) {
   const forms = document.getElementsByClassName("form");
 
   for (let form of forms) {
-    form.classList.remove("bg-[#0874f20d]", "border-1", "border-[#0874f2]");
     form.style.display = "none";
   }
 
@@ -53,9 +80,9 @@ function cardStyle(id) {
   const cards = document.getElementsByClassName("card");
 
   for (let card of cards) {
-    card.classList.remove("bg-[#0874f20d]", "border-3", "border-[#0874f2]");
+    card.classList.remove("border-[#0874f2]", "border-3", "bg-[#0874f20d]");
+    card.classList.add("border-1", "border-[#0808081a]");
   }
-
   document
     .getElementById(id)
     .classList.add("bg-[#0874f20d]", "border-3", "border-[#0874f2]");
@@ -127,6 +154,12 @@ document
     }
     const totalAmount = accountBalance + enterAmount;
     document.getElementById("account-money").innerText = totalAmount;
+    const data = {
+      name: "Add Money",
+      time: new Date().toLocaleTimeString(),
+    };
+
+    transaction(data);
   });
 
 // cash out event features
@@ -147,6 +180,11 @@ document
     }
     const totalAmount = accountBalance - enterAmount;
     document.getElementById("account-money").innerText = totalAmount;
+    const data = {
+      name: "Cash Out",
+      time: new Date().toLocaleTimeString(),
+    };
+    transaction(data);
   });
 // transfer money event features
 document
@@ -166,6 +204,11 @@ document
 
     const totalAmount = accountBalance - enterAmount;
     document.getElementById("account-money").innerText = totalAmount;
+    const data = {
+      name: "Transfer Money",
+      time: new Date().toLocaleTimeString(),
+    };
+    transaction(data);
   });
 // get bonus event features
 document
@@ -182,7 +225,12 @@ document
     if (bank === selectBank && coupon === selectCoupon) {
       const totalAmount = accountBalance + bonusAmount;
       document.getElementById("account-money").innerText = totalAmount;
+      const data = {
+        name: "Add Money",
+        time: new Date().toLocaleTimeString(),
+      };
     }
+    transaction(data);
   });
 // paybill event features
 document
@@ -200,4 +248,9 @@ document
       const totalAmount = accountBalance - billerAmount;
       document.getElementById("account-money").innerText = totalAmount;
     }
+    const data = {
+      name: "Add Money",
+      time: new Date().toLocaleTimeString(),
+    };
+    transaction(data);
   });
