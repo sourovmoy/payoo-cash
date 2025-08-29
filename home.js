@@ -229,8 +229,8 @@ document
         name: "Add Money",
         time: new Date().toLocaleTimeString(),
       };
+      transaction(data);
     }
-    transaction(data);
   });
 // paybill event features
 document
