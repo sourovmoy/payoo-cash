@@ -1,5 +1,5 @@
 const storage = [];
-console.log(storage);
+
 /*
  *            shared function
  */
@@ -36,6 +36,7 @@ function findBankValue(id) {
 function transaction(data) {
   storage.push(data);
   const historyPlace = document.getElementById("history-place");
+  historyPlace.innerHTML = "";
 
   for (const everyHistory of storage) {
     const div = document.createElement("div");
@@ -160,6 +161,9 @@ document
     };
 
     transaction(data);
+    document.getElementById("enter-add-amount").value = "";
+    document.getElementById("enter-bank-account").value = "";
+    document.getElementById("enter-add-amount-pin").value = "";
   });
 
 // cash out event features
@@ -185,6 +189,9 @@ document
       time: new Date().toLocaleTimeString(),
     };
     transaction(data);
+    document.getElementById("enter-agent-account").value = "";
+    document.getElementById("enter-cashOut-amount").value = "";
+    document.getElementById("cash-out-pin").value = "";
   });
 // transfer money event features
 document
@@ -208,7 +215,11 @@ document
       name: "Transfer Money",
       time: new Date().toLocaleTimeString(),
     };
+
     transaction(data);
+    document.getElementById("transfer-money-account").value = "";
+    document.getElementById("transfer-money-amount").value = "";
+    document.getElementById("transfer-money-pin").value = "";
   });
 // get bonus event features
 document
@@ -225,12 +236,14 @@ document
     if (bank === selectBank && coupon === selectCoupon) {
       const totalAmount = accountBalance + bonusAmount;
       document.getElementById("account-money").innerText = totalAmount;
-      const data = {
-        name: "Add Money",
-        time: new Date().toLocaleTimeString(),
-      };
-      transaction(data);
     }
+    const data = {
+      name: "Bonus Money",
+      time: new Date().toLocaleTimeString(),
+    };
+
+    transaction(data);
+    document.getElementById("enter-bonus-coupon").value = "";
   });
 // paybill event features
 document
@@ -239,18 +252,22 @@ document
     event.preventDefault();
     const accountBalance = findInputText("account-money");
     const selectBank = "Islami Bank";
-    const bank = findBankValue("paybill-banks-option");
+    const bank = findBankValue("pay-bill-banks-option");
     const billerAccount = findInputValue("biller-account-number");
-    const billerAmount = findInputValue("paybill-amount");
-    const enterPin = findInputValue("paybill-pin");
+    const billerAmount = findInputValue("pay-bill-amount");
+    const enterPin = findInputValue("pay-bill-pin");
     pinCheck(enterPin);
     if (bank === selectBank && billerAccount.toString().length === 11) {
       const totalAmount = accountBalance - billerAmount;
       document.getElementById("account-money").innerText = totalAmount;
     }
     const data = {
-      name: "Add Money",
+      name: "Pay Bill",
       time: new Date().toLocaleTimeString(),
     };
+
     transaction(data);
+    document.getElementById("biller-account-number").value = "";
+    document.getElementById("pay-bill-amount").value = "";
+    document.getElementById("pay-bill-pin").value = "";
   });
